@@ -1,0 +1,46 @@
+import random
+print("Let Play a game...!!!!\n")
+print("\t\t\t\tSnake Water Gun\t\t\t\t")
+print("S:- Snake\nW:- Water\nG:- Gun")
+list=["S","W","G"]
+a=1
+playerpt=0
+cpupt=0
+while(a<=5):
+    cpu = random.choice(list)
+    player = input("Enter Your Choice:- ")
+    player = player.upper()
+    if player == cpu:
+        print("Match Tied...!")
+    elif player=="S" and cpu=="W" :
+        print(" player winner ")
+        playerpt=playerpt+1
+    elif player=="S" and cpu=="G" :
+        print("Cpu Winner")
+        cpupt=cpupt+1
+    elif player=="W" and cpu=="S" :
+        print(" Cpu  winner ")
+        cpupt = cpupt + 1
+    elif player=="W" and cpu=="G" :
+        print("Player Winner")
+        playerpt = playerpt + 1
+    elif player=="G" and cpu=="S" :
+        print(" player winner ")
+        playerpt = playerpt + 1
+    elif player=="G" and cpu=="W" :
+        print("Cpu  Winner")
+        cpupt = cpupt + 1
+    else:
+        print("Enter Valid Values...")
+        print("Disqualify")
+        break
+    a+=1
+print("\nPlayer Point:- ",playerpt)
+print("CPU point:- ",cpupt)
+if playerpt>cpupt:
+    print("\nPlayer is Winner")
+elif cpupt>playerpt:
+    print("\nCpu is Winner")
+else:
+    print("\nMatch Tied")
+
